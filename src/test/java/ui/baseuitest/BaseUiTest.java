@@ -23,6 +23,7 @@ public abstract class BaseUiTest {
     public UploadDownloadPage uploadDownloadPage;
     public DynamicPropertiesPage dynamicPropertiesPage;
     public BrowserWindowsPage browserWindowsPage;
+    public AlertsPage alertsPage;
 
 
     @BeforeClass
@@ -37,6 +38,7 @@ public abstract class BaseUiTest {
         uploadDownloadPage = new UploadDownloadPage();
         dynamicPropertiesPage = new DynamicPropertiesPage();
         browserWindowsPage = new BrowserWindowsPage();
+        alertsPage = new AlertsPage();
         navigate = new Navigate();
 
 

@@ -4,6 +4,7 @@ import com.codeborne.selenide.SelenideElement;
 
 import static com.codeborne.selenide.Selectors.byId;
 import static com.codeborne.selenide.Selenide.$;
+import static com.codeborne.selenide.Selenide.$x;
 
 public class BrowserWindowsPage extends BasePage{
 
@@ -11,8 +12,7 @@ public class BrowserWindowsPage extends BasePage{
     public SelenideElement newTabHeading = $(byId("sampleHeading"));
     public SelenideElement newWindowButton=$(byId("windowButton"));
     public SelenideElement newWindowMessageButton=$(byId("messageWindowButton"));
-    public SelenideElement newWindowMessage = $(byId("//body[text()='Knowledge increases by sharing but not by saving. " +
-            "Please share this website with your friends and in your organization.']"));
+    public SelenideElement newWindowMessage = $x("//body");
 
     public BrowserWindowsPage clickNewTabButton(){
         elementActions.press(newTabButton);

@@ -8,12 +8,9 @@ import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 import ui.baseuitest.BaseUiTest;
 
-import javax.sound.midi.Soundbank;
-
-import java.sql.SQLOutput;
-
 import static com.codeborne.selenide.Selectors.byAttribute;
-import static com.codeborne.selenide.Selenide.*;
+import static com.codeborne.selenide.Selenide.$;
+import static com.codeborne.selenide.Selenide.switchTo;
 import static com.codeborne.selenide.WebDriverConditions.url;
 
 public class BrowserWindowPageTest extends BaseUiTest {
@@ -35,10 +32,10 @@ public class BrowserWindowPageTest extends BaseUiTest {
         browserWindowsPage.newTabHeading.shouldHave(Condition.exactText("This is a sample page"));
     }
 
-    @Test
+    @Test //Test not working
     public void newWindowMessageTest(){
         browserWindowsPage.newWindowMessageButton.click();
         switchTo().window(1);
-        System.out.println($x("//body").getText());
+        System.out.println(browserWindowsPage.newWindowMessage.getText());
     }
 }

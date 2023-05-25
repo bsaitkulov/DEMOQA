@@ -22,8 +22,9 @@ public class Navigate extends BasePage {
     public SelenideElement brokenLinks_ImagesMenu = $(byText("Broken Links - Images"));
     public SelenideElement upload_downloadMenu = $(byText("Upload and Download"));
     public SelenideElement dynamicPropertiesMenu = $(byText("Dynamic Properties"));
-    public SelenideElement alertsFrameWindowsMenu = $x("(//span[@class='group-header'])[3]");
     public SelenideElement browserWindowsMenu = $(byText("Browser Windows"));
+    public SelenideElement alertsMenu = $(byText("Alerts"));
+
 
 
     public Navigate toTextBoxPage() {
@@ -85,6 +86,11 @@ public class Navigate extends BasePage {
     public Navigate toBrowserWindowsPage() {
         alertMenu.click();
         browserWindowsMenu.click();
+        return this;
+    }
+    public Navigate toAlertsPage() {
+        alertMenu.click();
+        alertsMenu.click();
         return this;
     }
 }
