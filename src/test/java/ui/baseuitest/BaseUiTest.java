@@ -6,7 +6,6 @@ import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.remote.DesiredCapabilities;
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
-
 import static com.codeborne.selenide.Selenide.open;
 
 
@@ -21,6 +20,9 @@ public abstract class BaseUiTest {
     public ButtonsPage buttonsPage;
     public LinksPage linksPage;
     public BrokenLinks_Images brokenLinks_images;
+    public UploadDownloadPage uploadDownloadPage;
+    public DynamicPropertiesPage dynamicPropertiesPage;
+    public BrowserWindowsPage browserWindowsPage;
 
 
     @BeforeClass
@@ -32,7 +34,9 @@ public abstract class BaseUiTest {
         buttonsPage = new ButtonsPage();
         linksPage = new LinksPage();
         brokenLinks_images = new BrokenLinks_Images();
-
+        uploadDownloadPage = new UploadDownloadPage();
+        dynamicPropertiesPage = new DynamicPropertiesPage();
+        browserWindowsPage = new BrowserWindowsPage();
         navigate = new Navigate();
 
 
@@ -49,7 +53,6 @@ public abstract class BaseUiTest {
 
     @BeforeClass
     public void setUpBrowser(){
-
 
     }
 
