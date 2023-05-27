@@ -20,6 +20,8 @@ public class WebTablesPage extends BasePage{
     public SelenideElement ageField=$(byId("age"));
     public SelenideElement submitButtonWebTables=$(byId("submit"));
 
+    public ElementsCollection names = $$x("//div[@class='rt-tbody']/div/div/div[1]");
+
     public ElementsCollection webTableGroup = $$x("//div[@class='rt-tr-group']");
 
 

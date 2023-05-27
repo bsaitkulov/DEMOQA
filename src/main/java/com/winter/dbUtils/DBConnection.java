@@ -34,6 +34,16 @@ public class DBConnection {
         }
     }
 
+    public static int executeUpdate(String query) {
+        int affectedRows = 0;
+        try (Statement statement = connection.createStatement()) {
+            affectedRows = statement.executeUpdate(query);
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return affectedRows;
+    }
+
 
     public static void close() {
         try {
