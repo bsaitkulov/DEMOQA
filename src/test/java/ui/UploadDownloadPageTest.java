@@ -4,6 +4,7 @@ import com.codeborne.selenide.Condition;
 import com.codeborne.selenide.Configuration;
 import com.codeborne.selenide.Selenide;
 import org.testng.Assert;
+import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
 import ui.baseuitest.BaseUiTest;
 
@@ -13,12 +14,17 @@ import static com.codeborne.selenide.Selenide.sleep;
 
 public class UploadDownloadPageTest extends BaseUiTest {
 
-    @Test(priority = 1)
-    public void downloadTest() throws InterruptedException {
+    @BeforeClass
+    public void navigation(){
         navigate.toUpload_DownloadPage();
+    }
+
+    @Test
+    public void downloadTest() throws InterruptedException {
         uploadDownloadPage.clickDownloadButton();
         sleep(5000);
-        // Should set a path correctly
+
+        // TODO Should set a path correctly
         String downloadPath = "/Users/bakaisaitkulov/AquaProjects/SelenideDemo/build/downloads";
         String expectedFileName = "sampleFile.jpeg";
         File downloadedFile = new File(downloadPath, expectedFileName);
@@ -27,7 +33,6 @@ public class UploadDownloadPageTest extends BaseUiTest {
     }
     @Test
     public void uploadTest(){
-        navigate.toUpload_DownloadPage();
         uploadDownloadPage.uploadFileButton("/Users/bakaisaitkulov/Amazon/Bottle1.jpg");
         uploadDownloadPage.uploadedFilePath.should(Condition.exist);
 

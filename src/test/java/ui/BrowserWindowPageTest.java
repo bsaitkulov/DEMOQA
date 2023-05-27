@@ -32,10 +32,11 @@ public class BrowserWindowPageTest extends BaseUiTest {
         browserWindowsPage.newTabHeading.shouldHave(Condition.exactText("This is a sample page"));
     }
 
-    @Test //Test not working
+    @Test //Works on Safari
     public void newWindowMessageTest(){
         browserWindowsPage.newWindowMessageButton.click();
         switchTo().window(1);
-        System.out.println(browserWindowsPage.newWindowMessage.getText());
+       browserWindowsPage.newWindowMessage.shouldHave(Condition.exactText("Knowledge increases by sharing but not by saving. " +
+               "Please share this website with your friends and in your organization."));
     }
 }

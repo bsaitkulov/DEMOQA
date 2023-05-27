@@ -13,12 +13,11 @@ public class AlertsPage extends BasePage{
     public SelenideElement timerAlertButton = $(byId("timerAlertButton"));
     public SelenideElement confirmButton = $(byId("confirmButton"));
     public SelenideElement promtButton = $(byId("promtButton"));
-
-
+    public SelenideElement textOkCancel = $(byId("confirmResult"));
+    public SelenideElement promptText = $(byId("promptResult"));
 
     public AlertsPage clickAlertButton(){
         alertButton.click();
-        switchTo().alert().accept();
         return this;
     }
 }

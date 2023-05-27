@@ -7,17 +7,17 @@ import com.codeborne.selenide.SelenideElement;
 import com.codeborne.selenide.impl.CollectionElementByCondition;
 import org.openqa.selenium.WebElement;
 import org.testng.Assert;
+import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
 import ui.baseuitest.BaseUiTest;
 
-import java.util.List;
-import java.util.stream.Collectors;
-
 public class WebTablesTest extends BaseUiTest {
-
+    @BeforeClass
+    public void navigation(){
+        navigate.toWebTablesPage();
+    }
     @Test
     public void addUserTest(){
-        navigate.toWebTablesPage();
         webTablesPage.clickAdd()
                 .inputFirstName("Francesco")
                 .inputLastName("Toldo")
@@ -26,6 +26,5 @@ public class WebTablesTest extends BaseUiTest {
                 .inputSalary("100000")
                 .inputDepartment("Sport Department")
                 .clickSubmit();
-        String expectedValue = "Francesco";
     }
 }

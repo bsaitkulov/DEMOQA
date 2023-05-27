@@ -4,6 +4,7 @@ import com.codeborne.selenide.Configuration;
 import com.winter.pages.*;
 import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.remote.DesiredCapabilities;
+import org.openqa.selenium.safari.SafariOptions;
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
 import static com.codeborne.selenide.Selenide.open;
@@ -46,10 +47,16 @@ public abstract class BaseUiTest {
         chromeOptions.addArguments("--window-size=1920,1080");
         DesiredCapabilities desiredCapabilities = new DesiredCapabilities();
         desiredCapabilities.setCapability(ChromeOptions.CAPABILITY, chromeOptions);
-
-        Configuration.holdBrowserOpen = true;
-
         Configuration.browserCapabilities = desiredCapabilities;
+
+        Configuration.reportsFolder = "target/screenshots";
+
+//        Configuration.holdBrowserOpen = true;
+//        SafariOptions safariOptions = new SafariOptions();
+//        safariOptions.setCapability("safariInitialWindowRect", "{0, 0, 1600, 1200}");
+//
+//        Configuration.browser = "safari";
+
         open("https://demoqa.com/");
     }
 
