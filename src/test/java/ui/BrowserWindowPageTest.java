@@ -2,16 +2,11 @@ package ui;
 
 import com.codeborne.selenide.Condition;
 import com.codeborne.selenide.Selenide;
-import org.openqa.selenium.WindowType;
 import org.testng.annotations.BeforeClass;
-import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 import ui.baseuitest.BaseUiTest;
-
-import static com.codeborne.selenide.Selectors.byAttribute;
-import static com.codeborne.selenide.Selenide.$;
 import static com.codeborne.selenide.Selenide.switchTo;
-import static com.codeborne.selenide.WebDriverConditions.url;
+
 
 public class BrowserWindowPageTest extends BaseUiTest {
 

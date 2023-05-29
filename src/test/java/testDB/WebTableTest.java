@@ -16,7 +16,7 @@ import java.util.List;
 
 public class WebTableTest extends BaseUiTest {
 
-    @Test
+    @Test(priority = 1)
     public void addNewUserTest() throws SQLException {
         navigate.toWebTablesPage();
         webTablesPage.clickAdd()
@@ -31,10 +31,9 @@ public class WebTableTest extends BaseUiTest {
         String newUser = "";
         for (SelenideElement name : webTablesPage.names) {
             if (name.getText().equals("Francesco")) {
-                 newUser = name.getText();
+                newUser = name.getText();
             }
         }
-
         DBConnection.open("webtable");
 
         int affectedRows = DBConnection.executeUpdate("INSERT INTO webtable_demoqa (first_name, last_name, email, age, salary, department) " +
@@ -45,9 +44,24 @@ public class WebTableTest extends BaseUiTest {
 
         while (rs.next()) {
             WebTable user = new WebTable(rs);
-                System.out.println(user);
-            Assert.assertEquals(newUser, user.getLast_name());
+            System.out.println(user);
+            Assert.assertEquals(newUser, user.getFirst_name());
         }
     }
+
+    @Test(priority = 2)
+    public void deleteUserFromDB() throws SQLException {
+        DBConnection.open("webtable");
+
+        int affectedRows = DBConnection.executeUpdate("DELETE FROM webtable_demoqa " +
+                "WHERE First_Name = 'Francesco'; ");
+        System.out.println("Rows affected: " + affectedRows);
+
+        ResultSet rs = DBConnection.query("SELECT * FROM webtable_demoqa");
+        while (rs.next()) {
+            WebTable user = new WebTable(rs);
+            System.out.println(user);
+        }
     }
+}
 

@@ -24,7 +24,7 @@ public class Navigate extends BasePage {
     public SelenideElement dynamicPropertiesMenu = $(byText("Dynamic Properties"));
     public SelenideElement browserWindowsMenu = $(byText("Browser Windows"));
     public SelenideElement alertsMenu = $(byText("Alerts"));
-
+    public SelenideElement framesMenu = $(byText("Frames"));
 
 
     public Navigate toTextBoxPage() {
@@ -91,6 +91,11 @@ public class Navigate extends BasePage {
     public Navigate toAlertsPage() {
         alertMenu.click();
         alertsMenu.click();
+        return this;
+    }
+    public Navigate toFramesPage() {
+        alertMenu.click();
+        framesMenu.click();
         return this;
     }
 }

@@ -25,6 +25,7 @@ public abstract class BaseUiTest {
     public DynamicPropertiesPage dynamicPropertiesPage;
     public BrowserWindowsPage browserWindowsPage;
     public AlertsPage alertsPage;
+    public FramesPage framesPage;
 
 
     @BeforeClass
@@ -41,6 +42,7 @@ public abstract class BaseUiTest {
         browserWindowsPage = new BrowserWindowsPage();
         alertsPage = new AlertsPage();
         navigate = new Navigate();
+        framesPage = new FramesPage();
 
 
         ChromeOptions chromeOptions = new ChromeOptions();
