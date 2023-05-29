@@ -11,5 +11,6 @@ public class NestedFramesPage extends BasePage{
     public SelenideElement parentFrame = $((byId("frame1")));
     public SelenideElement childFrame = $x(("//iframe[@srcdoc='<p>Child Iframe</p>']"));
     public SelenideElement parentFrameText = $x("//body[text()='Parent frame']");
+    public SelenideElement childFrameText = $x("//body/p[text()='Child Iframe']");
 
 }
