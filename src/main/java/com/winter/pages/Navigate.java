@@ -25,6 +25,7 @@ public class Navigate extends BasePage {
     public SelenideElement browserWindowsMenu = $(byText("Browser Windows"));
     public SelenideElement alertsMenu = $(byText("Alerts"));
     public SelenideElement framesMenu = $(byText("Frames"));
+    public SelenideElement nestedFramesMenu = $(byText("Nested Frames"));
 
 
     public Navigate toTextBoxPage() {
@@ -96,6 +97,11 @@ public class Navigate extends BasePage {
     public Navigate toFramesPage() {
         alertMenu.click();
         framesMenu.click();
+        return this;
+    }
+    public Navigate toNestedFramesPage() {
+        alertMenu.click();
+        nestedFramesMenu.click();
         return this;
     }
 }

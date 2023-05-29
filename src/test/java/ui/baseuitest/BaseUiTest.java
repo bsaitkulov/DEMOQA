@@ -4,7 +4,6 @@ import com.codeborne.selenide.Configuration;
 import com.winter.pages.*;
 import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.remote.DesiredCapabilities;
-import org.openqa.selenium.safari.SafariOptions;
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
 import static com.codeborne.selenide.Selenide.open;
@@ -26,6 +25,7 @@ public abstract class BaseUiTest {
     public BrowserWindowsPage browserWindowsPage;
     public AlertsPage alertsPage;
     public FramesPage framesPage;
+    public NestedFramesPage nestedFramesPage;
 
 
     @BeforeClass
@@ -43,6 +43,7 @@ public abstract class BaseUiTest {
         alertsPage = new AlertsPage();
         navigate = new Navigate();
         framesPage = new FramesPage();
+        nestedFramesPage = new NestedFramesPage();
 
 
         ChromeOptions chromeOptions = new ChromeOptions();
