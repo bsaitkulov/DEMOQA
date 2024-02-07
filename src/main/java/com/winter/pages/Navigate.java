@@ -13,6 +13,7 @@ public class Navigate extends BasePage {
 
     public SelenideElement elementMenu = $x("(//div[@class='card mt-4 top-card'])[1]");
     public SelenideElement alertMenu = $x("(//div[@class='card mt-4 top-card'])[3]");
+    public SelenideElement widgetsMenu = $x("(//div[@class='card mt-4 top-card'])[4]");
     public SelenideElement textBoxMenu = $x("//span[text()='Text Box']");
     public SelenideElement checkBoxMenu = $x("//span[text()='Check Box']");
     public SelenideElement radioButtonMenu = $x("//span[text()='Radio Button']");
@@ -26,6 +27,9 @@ public class Navigate extends BasePage {
     public SelenideElement alertsMenu = $(byText("Alerts"));
     public SelenideElement framesMenu = $(byText("Frames"));
     public SelenideElement nestedFramesMenu = $(byText("Nested Frames"));
+    public SelenideElement modalDialogsMenu = $(byText("Modal Dialogs"));
+    public SelenideElement accordianMenu = $(byText("Accordian"));
+    public SelenideElement autoCompleteMenu = $(byText("Auto Complete"));
 
 
     public Navigate toTextBoxPage() {
@@ -102,6 +106,22 @@ public class Navigate extends BasePage {
     public Navigate toNestedFramesPage() {
         alertMenu.click();
         nestedFramesMenu.click();
+        return this;
+    }
+    public Navigate toModalDialogPage() {
+        alertMenu.click();
+        Selenide.actions().sendKeys(Keys.PAGE_DOWN).perform();
+        modalDialogsMenu.click();
+        return this;
+    }
+    public Navigate toAccordianPage() {
+        widgetsMenu.click();
+        accordianMenu.click();
+        return this;
+    }
+    public Navigate toAutoCompletePage() {
+        widgetsMenu.click();
+        autoCompleteMenu.click();
         return this;
     }
 }

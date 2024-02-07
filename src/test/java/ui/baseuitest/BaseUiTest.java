@@ -26,6 +26,9 @@ public abstract class BaseUiTest {
     public AlertsPage alertsPage;
     public FramesPage framesPage;
     public NestedFramesPage nestedFramesPage;
+    public ModalDialogsPage modalDialogsPage;
+    public AccordianPage accordianPage;
+    public AutoCompletePage autoCompletePage;
 
 
     @BeforeClass
@@ -44,6 +47,9 @@ public abstract class BaseUiTest {
         navigate = new Navigate();
         framesPage = new FramesPage();
         nestedFramesPage = new NestedFramesPage();
+        modalDialogsPage = new ModalDialogsPage();
+        accordianPage = new AccordianPage();
+        autoCompletePage = new AutoCompletePage();
 
 
         ChromeOptions chromeOptions = new ChromeOptions();
